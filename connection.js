@@ -5,7 +5,9 @@ let mongooseConfig = {
     useUnifiedTopology: true
 }
 
-mongoose.connect('mongodb://127.0.0.1:27017/lists', mongooseConfig)
+const url = process.env.DB_URL || 'mongodb://127.0.0.1:27017/lists'
+
+mongoose.connect(url , mongooseConfig)
 
 mongoose.connection.on('connected', ()=> console.log("Connected to database"))
 mongoose.connection.on('disconnected', ()=> console.log("Disconnected from database"))
