@@ -5,7 +5,7 @@ let mongooseConfig = {
     useUnifiedTopology: true
 }
 
-const url = process.env.MONGO.URL || 'mongodb://127.0.0.1:27017/lists'
+const url = process.env.MONGO_URL || 'mongodb://127.0.0.1:27017/lists'
 
 mongoose.connect(url , mongooseConfig)
 
