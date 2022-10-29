@@ -1,13 +1,14 @@
 import parser from 'body-parser'
 import express from 'express'
 const app = express()
+const port = process.env.PORT || 3000
 
 import connection from './connection.js'
 import List from './models/List.js'
 
 app.use(parser.json())
 
-app.listen(3000, () => console.log('app listening on port 3000'))
+app.listen(port, () => console.log(`app listening on port ${port}`))
 
 app.get('/', function(req, res) {
     res.send('New Thing!')
